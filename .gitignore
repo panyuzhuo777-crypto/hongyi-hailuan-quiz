@@ -1,0 +1,6 @@
+.DS_Store
+verification/
+*.log
+node_modules/
+dist/
+.site-work/
