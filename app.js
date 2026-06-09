@@ -290,11 +290,14 @@ const audioToggle = document.querySelector("#audioToggle");
 const submitStatus = document.querySelector("#submitStatus");
 const submitStatusTitle = document.querySelector("#submitStatusTitle");
 const submitStatusText = document.querySelector("#submitStatusText");
+let bgmEnabled = true;
 
 totalSteps.textContent = String(questions.length).padStart(2, "0");
 renderRolePreviewStrip();
 renderRecords();
 retryPendingSubmissions();
+renderAudioState();
+playBgm();
 
 document.querySelectorAll(".segment").forEach((button) => {
   button.addEventListener("click", () => {
@@ -322,21 +325,45 @@ document.querySelector("#clearRecordsButton").addEventListener("click", () => {
   renderRecords();
 });
 
+document.addEventListener("pointerdown", playBgmAfterGesture, { passive: true });
+document.addEventListener("keydown", playBgmAfterGesture);
+
 audioToggle.addEventListener("click", async () => {
-  try {
-    if (bgm.paused) {
-      await bgm.play();
-      audioToggle.classList.add("is-playing");
-      audioToggle.textContent = "BGM ON";
-    } else {
-      bgm.pause();
-      audioToggle.classList.remove("is-playing");
-      audioToggle.textContent = "BGM";
-    }
-  } catch {
-    audioToggle.textContent = "BGM";
+  bgmEnabled = !bgmEnabled;
+  renderAudioState();
+
+  if (bgmEnabled) {
+    await playBgm();
+  } else {
+    bgm.pause();
   }
 });
+
+function renderAudioState() {
+  audioToggle.classList.toggle("is-playing", bgmEnabled);
+  audioToggle.textContent = bgmEnabled ? "BGM ON" : "BGM";
+  audioToggle.setAttribute(
+    "aria-label",
+    bgmEnabled ? "背景音樂目前開啟，點擊關閉" : "背景音樂目前關閉，點擊開啟"
+  );
+}
+
+async function playBgm() {
+  if (!bgmEnabled) return false;
+  try {
+    bgm.volume = 0.65;
+    await bgm.play();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function playBgmAfterGesture(event) {
+  if (!bgmEnabled || !bgm.paused) return;
+  if (event?.target && audioToggle.contains(event.target)) return;
+  playBgm();
+}
 
 document.querySelector("#shareButton").addEventListener("click", async () => {
   const text = buildShareText();

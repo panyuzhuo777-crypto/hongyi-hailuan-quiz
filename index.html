@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>紅夷海亂｜角色心測</title>
-    <link rel="stylesheet" href="styles.css?v=20260609-hero-tw" />
+    <link rel="stylesheet" href="styles.css?v=20260609-bgm-on" />
   </head>
   <body>
     <div class="scene" aria-hidden="true"></div>
-    <audio id="bgm" src="assets/audio/bgm.mp3" loop preload="metadata"></audio>
+    <audio id="bgm" src="assets/audio/bgm.mp3" loop autoplay preload="auto"></audio>
 
     <main class="app" id="app">
-      <button class="audio-toggle" id="audioToggle" type="button" aria-label="播放或暫停背景音樂">
-        BGM
+      <button class="audio-toggle is-playing" id="audioToggle" type="button" aria-label="背景音樂目前開啟，點擊關閉">
+        BGM ON
       </button>
 
       <section class="screen intro-screen" id="introScreen">
@@ -157,6 +157,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=20260609-hero-tw"></script>
+    <script src="app.js?v=20260609-bgm-on"></script>
   </body>
 </html>
