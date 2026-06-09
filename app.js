@@ -1,75 +1,75 @@
-const roleOrder = ["郑森", "田川七左卫门", "罗宾", "泰雅", "阿美", "伊莎贝拉", "焉迟落"];
+const roleOrder = ["鄭森", "田川七左衛門", "羅賓", "泰雅", "阿美", "伊莎貝拉", "焉遲落"];
 
 const roles = {
-  "郑森": {
+  "鄭森": {
     gender: "male",
-    mark: "郑",
+    mark: "鄭",
     image: "assets/characters/zhengsen.jpg",
-    caption: "国姓爷｜明军统帅",
-    line: "家国、责任、在绝路上仍要扛旗的人",
+    caption: "國姓爺｜明軍統帥",
+    line: "家國、責任、在絕路上仍要扛旗的人",
     description:
-      "你更接近那个把个人情感压进战鼓里的人。你会为了道统、承诺和身后的人硬撑到底，也会在每一次取舍里被亲情与责任反复撕扯。",
-    tags: ["家国大义", "主帅", "死战", "兄弟羁绊"]
+      "你更接近那個把個人情感壓進戰鼓裡的人。你會為了道統、承諾和身後的人硬撐到底，也會在每一次取捨裡被親情與責任反覆撕扯。",
+    tags: ["家國大義", "主帥", "死戰", "兄弟羈絆"]
   },
-  "田川七左卫门": {
+  "田川七左衛門": {
     gender: "male",
     mark: "田",
     image: "assets/characters/tianchuan.jpg",
-    caption: "仙之助号｜丰辰家的武士",
-    line: "漂泊、执拗、想把失去的人重新留住",
+    caption: "仙之助號｜豐辰家的武士",
+    line: "漂泊、執拗、想把失去的人重新留住",
     description:
-      "你对关系里的缺席和亏欠格外敏感，也很难对重要的人真正放手。比起宏大的旗帜，你更在意自己终于能停靠在哪里，能不能把旧日被夺走的东西夺回来。",
+      "你對關係裡的缺席和虧欠格外敏感，也很難對重要的人真正放手。比起宏大的旗幟，你更在意自己終於能停靠在哪裡，能不能把舊日被奪走的東西奪回來。",
     tags: ["武士", "快船", "身世", "情感拉扯"]
   },
-  "罗宾": {
+  "羅賓": {
     gender: "male",
-    mark: "罗",
+    mark: "羅",
     image: "assets/characters/robin.jpg",
-    caption: "飞翔的荷兰人｜福尔摩沙守望者",
-    line: "船长、承诺、把远方当成归宿的人",
+    caption: "飛翔的荷蘭人｜福爾摩沙守望者",
+    line: "船長、承諾、把遠方當成歸宿的人",
     description:
-      "你身上有很强的生存韧性和船长气质。你会为了同伴守住最后一座城，也会为了一个远方的梦不肯退后半步，哪怕那片土地已经被炮火染红。",
-    tags: ["船长", "顽强", "炮击", "同伴承诺"]
+      "你身上有很強的生存韌性和船長氣質。你會為了同伴守住最後一座城，也會為了一個遠方的夢不肯退後半步，哪怕那片土地已經被砲火染紅。",
+    tags: ["船長", "頑強", "砲擊", "同伴承諾"]
   },
   "泰雅": {
     gender: "male",
     mark: "泰",
     image: "assets/characters/taiya.jpg",
-    caption: "原住民战士｜阿美的守护者",
-    line: "自由、守护、在夹缝里等待反击",
+    caption: "原住民戰士｜阿美的守護者",
+    line: "自由、守護、在夾縫裡等待反擊",
     description:
-      "你更像沉默但清醒的保护者。你能忍、能退、也能在关键时刻浴血向前；你想要的不是谁赢，而是故土和重要的人终于不再被外来旗帜摆布。",
-    tags: ["原住民自由", "战术撤退", "浴血奋战", "守护"]
+      "你更像沉默但清醒的保護者。你能忍、能退、也能在關鍵時刻浴血向前；你想要的不是誰贏，而是故土和重要的人終於不再被外來旗幟擺佈。",
+    tags: ["原住民自由", "戰術撤退", "浴血奮戰", "守護"]
   },
   "阿美": {
     gender: "female",
     mark: "阿",
     image: "assets/characters/amei.jpg",
-    caption: "大肚国公主｜雾影与疾行",
-    line: "故土、恩情、温柔里藏着锋刃的人",
+    caption: "大肚國公主｜霧影與疾行",
+    line: "故土、恩情、溫柔裡藏著鋒刃的人",
     description:
-      "你重情，也有很强的行动力。你会记得谁救过你、谁保护过你，也会为了部族和爱人主动走进危险里；你的柔软不是退让，而是让自己继续战斗的理由。",
-    tags: ["公主", "部族", "雾影", "报恩"]
+      "你重情，也有很強的行動力。你會記得誰救過你、誰保護過你，也會為了部族和愛人主動走進危險裡；你的柔軟不是退讓，而是讓自己繼續戰鬥的理由。",
+    tags: ["公主", "部族", "霧影", "報恩"]
   },
-  "伊莎贝拉": {
+  "伊莎貝拉": {
     gender: "female",
     mark: "伊",
     image: "assets/characters/isabella.jpg",
-    caption: "西班牙公主｜黄金蟒与海盗",
-    line: "身份、自由、把命运握回掌心的人",
+    caption: "西班牙公主｜黃金蟒與海盜",
+    line: "身份、自由、把命運握回掌心的人",
     description:
-      "你适合多重身份和高张力选择。你可以是公主、间谍、海盗，也可以在战场前决定自己究竟属于哪面旗；你的魅力来自危险、胆识和不愿被定义。",
-    tags: ["公主", "海盗", "间谍", "纵横四海"]
+      "你適合多重身份和高張力選擇。你可以是公主、間諜、海盜，也可以在戰場前決定自己究竟屬於哪面旗；你的魅力來自危險、膽識和不願被定義。",
+    tags: ["公主", "海盜", "間諜", "縱橫四海"]
   },
-  "焉迟落": {
+  "焉遲落": {
     gender: "female",
     mark: "落",
     image: "assets/characters/yanchiluo.jpg",
-    caption: "明军副将｜缜密与疗养",
-    line: "谋算、隐忍、用秘密保护所爱的人",
+    caption: "明軍副將｜縝密與療養",
+    line: "謀算、隱忍、用秘密保護所愛的人",
     description:
-      "你更像把情绪收进袖中的执棋者。你擅长权衡、布局和隐藏真实目的，也愿意为了让重要的人活下去背负误解；你的心软常常以冷静的形式出现。",
-    tags: ["暗线", "缜密", "疗养", "两难选择"]
+      "你更像把情緒收進袖中的執棋者。你擅長權衡、佈局和隱藏真實目的，也願意為了讓重要的人活下去揹負誤解；你的心軟常常以冷靜的形式出現。",
+    tags: ["暗線", "縝密", "療養", "兩難選擇"]
   }
 };
 
@@ -77,163 +77,163 @@ const questions = [
   {
     kicker: "身份",
     type: "single",
-    title: "在这个故事里，你最想背负哪一种身份重量？",
+    title: "在這個故事裡，你最想揹負哪一種身份重量？",
     options: [
-      { label: "A", text: "残旗之下的主帅，明知无路也要撑住众人", score: { "郑森": 3, "罗宾": 1, "焉迟落": 1 } },
-      { label: "B", text: "被海潮推着漂泊的人，先为自己找到停靠处", score: { "田川七左卫门": 3, "罗宾": 2, "阿美": 1 } },
-      { label: "C", text: "故土与族人的守护者，不愿再被外人支配", score: { "泰雅": 3, "阿美": 3 } },
-      { label: "D", text: "多重身份的冒险者，旗帜可以换，但选择必须归我", score: { "伊莎贝拉": 3, "焉迟落": 1, "罗宾": 1 } }
+      { label: "A", text: "殘旗之下的主帥，明知無路也要撐住眾人", score: { "鄭森": 3, "羅賓": 1, "焉遲落": 1 } },
+      { label: "B", text: "被海潮推著漂泊的人，先為自己找到停靠處", score: { "田川七左衛門": 3, "羅賓": 2, "阿美": 1 } },
+      { label: "C", text: "故土與族人的守護者，不願再被外人支配", score: { "泰雅": 3, "阿美": 3 } },
+      { label: "D", text: "多重身份的冒險者，旗幟可以換，但選擇必須歸我", score: { "伊莎貝拉": 3, "焉遲落": 1, "羅賓": 1 } }
     ]
   },
   {
-    kicker: "决策",
+    kicker: "決策",
     type: "single",
-    title: "局势失控时，你最自然的第一反应是？",
+    title: "局勢失控時，你最自然的第一反應是？",
     options: [
-      { label: "A", text: "正面顶上去，先把大家的士气稳住", score: { "郑森": 2, "罗宾": 2 } },
-      { label: "B", text: "绕到暗处查清信息，再决定站到哪一边", score: { "焉迟落": 2, "伊莎贝拉": 2, "田川七左卫门": 1 } },
-      { label: "C", text: "先确认重要的人安不安全，胜负之后再说", score: { "泰雅": 2, "阿美": 2, "田川七左卫门": 2 } },
-      { label: "D", text: "让两股力量彼此消耗，等真正的机会出现", score: { "泰雅": 2, "焉迟落": 2 } }
+      { label: "A", text: "正面頂上去，先把大家的士氣穩住", score: { "鄭森": 2, "羅賓": 2 } },
+      { label: "B", text: "繞到暗處查清資訊，再決定站到哪一邊", score: { "焉遲落": 2, "伊莎貝拉": 2, "田川七左衛門": 1 } },
+      { label: "C", text: "先確認重要的人安不安全，勝負之後再說", score: { "泰雅": 2, "阿美": 2, "田川七左衛門": 2 } },
+      { label: "D", text: "讓兩股力量彼此消耗，等真正的機會出現", score: { "泰雅": 2, "焉遲落": 2 } }
     ]
   },
   {
-    kicker: "羁绊",
+    kicker: "羈絆",
     type: "multi",
-    title: "哪些关系线最容易打动你？",
+    title: "哪些關係線最容易打動你？",
     options: [
-      { label: "A", text: "从小一起长大，却被时代拆散的三人", score: { "郑森": 2, "田川七左卫门": 2, "焉迟落": 2 } },
-      { label: "B", text: "公主与守护者，隔着多年仍想回到彼此身边", score: { "阿美": 2, "泰雅": 2 } },
-      { label: "C", text: "船长与公主，在火光和海风里相互拯救", score: { "罗宾": 2, "伊莎贝拉": 2 } },
-      { label: "D", text: "一起扛过苦难的同伴，比血缘更像家人", score: { "罗宾": 2, "泰雅": 1, "郑森": 1 } },
-      { label: "E", text: "恩情太重，明知危险也要用行动偿还", score: { "阿美": 2, "田川七左卫门": 1, "伊莎贝拉": 1 } }
+      { label: "A", text: "從小一起長大，卻被時代拆散的三人", score: { "鄭森": 2, "田川七左衛門": 2, "焉遲落": 2 } },
+      { label: "B", text: "公主與守護者，隔著多年仍想回到彼此身邊", score: { "阿美": 2, "泰雅": 2 } },
+      { label: "C", text: "船長與公主，在火光和海風裡相互拯救", score: { "羅賓": 2, "伊莎貝拉": 2 } },
+      { label: "D", text: "一起扛過苦難的同伴，比血緣更像家人", score: { "羅賓": 2, "泰雅": 1, "鄭森": 1 } },
+      { label: "E", text: "恩情太重，明知危險也要用行動償還", score: { "阿美": 2, "田川七左衛門": 1, "伊莎貝拉": 1 } }
     ]
   },
   {
-    kicker: "边界",
+    kicker: "邊界",
     type: "single",
-    title: "以下哪种体验你最难接受？",
+    title: "以下哪種體驗你最難接受？",
     options: [
-      { label: "A", text: "个人愿望长期被家国使命压住", score: { "郑森": -3, "焉迟落": -2 } },
-      { label: "B", text: "最在乎的人站在互相冲突的阵营里", score: { "田川七左卫门": -2, "焉迟落": -2, "阿美": -1, "泰雅": -1 } },
-      { label: "C", text: "漂泊多年，几乎没有真正的归处", score: { "罗宾": -2, "田川七左卫门": -2 } },
-      { label: "D", text: "必须隐藏身份、说谎或背负误解", score: { "伊莎贝拉": -2, "焉迟落": -3 } },
-      { label: "E", text: "大规模攻城与军团压力贯穿全程", score: { "郑森": -2, "罗宾": -2, "泰雅": -1 } }
+      { label: "A", text: "個人願望長期被家國使命壓住", score: { "鄭森": -3, "焉遲落": -2 } },
+      { label: "B", text: "最在乎的人站在互相衝突的陣營裡", score: { "田川七左衛門": -2, "焉遲落": -2, "阿美": -1, "泰雅": -1 } },
+      { label: "C", text: "漂泊多年，幾乎沒有真正的歸處", score: { "羅賓": -2, "田川七左衛門": -2 } },
+      { label: "D", text: "必須隱藏身份、說謊或揹負誤解", score: { "伊莎貝拉": -2, "焉遲落": -3 } },
+      { label: "E", text: "大規模攻城與軍團壓力貫穿全程", score: { "鄭森": -2, "羅賓": -2, "泰雅": -1 } }
     ]
   },
   {
-    kicker: "资源",
+    kicker: "資源",
     type: "single",
-    title: "如果只能优先掌握一种资源，你会选？",
+    title: "如果只能優先掌握一種資源，你會選？",
     options: [
-      { label: "A", text: "地图、海图、加农炮和援军", score: { "郑森": 3, "伊莎贝拉": 1 } },
-      { label: "B", text: "档案、账本、密信和专属情报", score: { "焉迟落": 2, "泰雅": 2, "阿美": 2 } },
-      { label: "C", text: "快船、机动、潜入路线", score: { "田川七左卫门": 3, "阿美": 2, "伊莎贝拉": 1 } },
-      { label: "D", text: "舰队、城防、士兵和火力", score: { "罗宾": 3, "郑森": 1, "泰雅": 1 } }
+      { label: "A", text: "地圖、海圖、加農砲和援軍", score: { "鄭森": 3, "伊莎貝拉": 1 } },
+      { label: "B", text: "檔案、帳本、密信和專屬情報", score: { "焉遲落": 2, "泰雅": 2, "阿美": 2 } },
+      { label: "C", text: "快船、機動、潛入路線", score: { "田川七左衛門": 3, "阿美": 2, "伊莎貝拉": 1 } },
+      { label: "D", text: "艦隊、城防、士兵和火力", score: { "羅賓": 3, "鄭森": 1, "泰雅": 1 } }
     ]
   },
   {
-    kicker: "战场",
+    kicker: "戰場",
     type: "single",
-    title: "你的战斗气质更像哪一种？",
+    title: "你的戰鬥氣質更像哪一種？",
     options: [
-      { label: "A", text: "死战不退，用最后一口气守住旗帜", score: { "郑森": 3, "罗宾": 2 } },
-      { label: "B", text: "能退能忍，关键时刻再浴血反击", score: { "泰雅": 3, "焉迟落": 1 } },
-      { label: "C", text: "轻快、隐蔽、突然出现又立刻离开", score: { "阿美": 3, "田川七左卫门": 2 } },
-      { label: "D", text: "海上突袭，靠胆量和经验打穿局面", score: { "伊莎贝拉": 3, "罗宾": 1 } }
+      { label: "A", text: "死戰不退，用最後一口氣守住旗幟", score: { "鄭森": 3, "羅賓": 2 } },
+      { label: "B", text: "能退能忍，關鍵時刻再浴血反擊", score: { "泰雅": 3, "焉遲落": 1 } },
+      { label: "C", text: "輕快、隱蔽、突然出現又立刻離開", score: { "阿美": 3, "田川七左衛門": 2 } },
+      { label: "D", text: "海上突襲，靠膽量和經驗打穿局面", score: { "伊莎貝拉": 3, "羅賓": 1 } }
     ]
   },
   {
-    kicker: "取舍",
+    kicker: "取捨",
     type: "single",
-    title: "你更愿意承受哪一种两难？",
+    title: "你更願意承受哪一種兩難？",
     options: [
-      { label: "A", text: "为了大局做残忍选择，然后继续向前", score: { "郑森": 2, "焉迟落": 2 } },
-      { label: "B", text: "明知会影响胜负，也要优先护住一个人", score: { "泰雅": 2, "阿美": 2, "田川七左卫门": 2 } },
-      { label: "C", text: "在多重身份之间选择真正的自己", score: { "伊莎贝拉": 3, "罗宾": 1, "焉迟落": 1 } },
-      { label: "D", text: "给无家可归的人找一片能活下去的土地", score: { "田川七左卫门": 2, "罗宾": 2, "泰雅": 2 } }
+      { label: "A", text: "為了大局做殘忍選擇，然後繼續向前", score: { "鄭森": 2, "焉遲落": 2 } },
+      { label: "B", text: "明知會影響勝負，也要優先護住一個人", score: { "泰雅": 2, "阿美": 2, "田川七左衛門": 2 } },
+      { label: "C", text: "在多重身份之間選擇真正的自己", score: { "伊莎貝拉": 3, "羅賓": 1, "焉遲落": 1 } },
+      { label: "D", text: "給無家可歸的人找一片能活下去的土地", score: { "田川七左衛門": 2, "羅賓": 2, "泰雅": 2 } }
     ]
   },
   {
     kicker: "推理",
     type: "rank",
-    title: "推理与探索中，请选出你最想追的前三类线索。",
+    title: "推理與探索中，請選出你最想追的前三類線索。",
     options: [
-      { label: "A", text: "阵营政治、主权归属、暗中协议", score: { "焉迟落": 2, "郑森": 1, "伊莎贝拉": 1 } },
-      { label: "B", text: "航海、军团、火炮、攻守路线", score: { "郑森": 2, "罗宾": 2, "泰雅": 1 } },
-      { label: "C", text: "隐藏身份、通缉、间谍目的", score: { "伊莎贝拉": 2, "焉迟落": 2, "田川七左卫门": 1 } },
-      { label: "D", text: "十一年前的旧案与失散真相", score: { "田川七左卫门": 2, "罗宾": 1, "泰雅": 1, "阿美": 1 } },
-      { label: "E", text: "情感修罗场与人物关系的亏欠", score: { "阿美": 2, "田川七左卫门": 2, "焉迟落": 1 } },
-      { label: "F", text: "部族、传教士、长鲸与故土秘密", score: { "阿美": 2, "泰雅": 2 } }
+      { label: "A", text: "陣營政治、主權歸屬、暗中協議", score: { "焉遲落": 2, "鄭森": 1, "伊莎貝拉": 1 } },
+      { label: "B", text: "航海、軍團、火砲、攻守路線", score: { "鄭森": 2, "羅賓": 2, "泰雅": 1 } },
+      { label: "C", text: "隱藏身份、通緝、間諜目的", score: { "伊莎貝拉": 2, "焉遲落": 2, "田川七左衛門": 1 } },
+      { label: "D", text: "十一年前的舊案與失散真相", score: { "田川七左衛門": 2, "羅賓": 1, "泰雅": 1, "阿美": 1 } },
+      { label: "E", text: "情感修羅場與人物關係的虧欠", score: { "阿美": 2, "田川七左衛門": 2, "焉遲落": 1 } },
+      { label: "F", text: "部族、傳教士、長鯨與故土秘密", score: { "阿美": 2, "泰雅": 2 } }
     ]
   },
   {
-    kicker: "体验",
+    kicker: "體驗",
     type: "single",
-    title: "你更享受哪种玩家体验？",
+    title: "你更享受哪種玩家體驗？",
     options: [
-      { label: "A", text: "主 C 带队，主动和所有人谈判推进", score: { "郑森": 2, "罗宾": 2, "伊莎贝拉": 2 } },
-      { label: "B", text: "暗线操盘，关键时刻才亮出真正底牌", score: { "焉迟落": 3, "田川七左卫门": 1, "伊莎贝拉": 1 } },
-      { label: "C", text: "强情感沉浸，关系选择比胜负更刺痛", score: { "阿美": 2, "泰雅": 2, "田川七左卫门": 2, "焉迟落": 1 } },
-      { label: "D", text: "支援与保护队友，让别人能活着完成目标", score: { "焉迟落": 2, "泰雅": 2, "阿美": 1 } }
+      { label: "A", text: "主 C 帶隊，主動和所有人談判推進", score: { "鄭森": 2, "羅賓": 2, "伊莎貝拉": 2 } },
+      { label: "B", text: "暗線操盤，關鍵時刻才亮出真正底牌", score: { "焉遲落": 3, "田川七左衛門": 1, "伊莎貝拉": 1 } },
+      { label: "C", text: "強情感沉浸，關係選擇比勝負更刺痛", score: { "阿美": 2, "泰雅": 2, "田川七左衛門": 2, "焉遲落": 1 } },
+      { label: "D", text: "支援與保護隊友，讓別人能活著完成目標", score: { "焉遲落": 2, "泰雅": 2, "阿美": 1 } }
     ]
   },
   {
-    kicker: "阵营",
+    kicker: "陣營",
     type: "single",
-    title: "如果必须站队，你更接近哪种立场？",
+    title: "如果必須站隊，你更接近哪種立場？",
     options: [
-      { label: "A", text: "为明与故国道统拼到底", score: { "郑森": 3, "焉迟落": -1 } },
-      { label: "B", text: "原住民应该拥有自己的自由", score: { "泰雅": 3, "阿美": 3 } },
-      { label: "C", text: "海盗与个人自由比官方旗帜更真实", score: { "伊莎贝拉": 2, "罗宾": 2 } },
-      { label: "D", text: "现实保全比名分更重要", score: { "焉迟落": 3, "田川七左卫门": 1 } },
-      { label: "E", text: "武士身世与个人名誉必须被证明", score: { "田川七左卫门": 3 } }
+      { label: "A", text: "為明與故國道統拼到底", score: { "鄭森": 3, "焉遲落": -1 } },
+      { label: "B", text: "原住民應該擁有自己的自由", score: { "泰雅": 3, "阿美": 3 } },
+      { label: "C", text: "海盜與個人自由比官方旗幟更真實", score: { "伊莎貝拉": 2, "羅賓": 2 } },
+      { label: "D", text: "現實保全比名分更重要", score: { "焉遲落": 3, "田川七左衛門": 1 } },
+      { label: "E", text: "武士身世與個人名譽必須被證明", score: { "田川七左衛門": 3 } }
     ]
   },
   {
-    kicker: "队伍",
+    kicker: "隊伍",
     type: "single",
-    title: "在一桌人里，你通常更像？",
+    title: "在一桌人裡，你通常更像？",
     options: [
-      { label: "A", text: "能被看见的旗帜，负责把方向喊出来", score: { "郑森": 2, "罗宾": 2 } },
-      { label: "B", text: "独自跑线的人，效率和行动范围都很高", score: { "田川七左卫门": 2, "伊莎贝拉": 1, "阿美": 2 } },
-      { label: "C", text: "关系纽带，谁受伤谁动摇你都会在意", score: { "阿美": 2, "泰雅": 2, "焉迟落": 1 } },
-      { label: "D", text: "冷静算牌的人，先把局势看透再表态", score: { "焉迟落": 3, "泰雅": 1 } }
+      { label: "A", text: "能被看見的旗幟，負責把方向喊出來", score: { "鄭森": 2, "羅賓": 2 } },
+      { label: "B", text: "獨自跑線的人，效率和行動範圍都很高", score: { "田川七左衛門": 2, "伊莎貝拉": 1, "阿美": 2 } },
+      { label: "C", text: "關係紐帶，誰受傷誰動搖你都會在意", score: { "阿美": 2, "泰雅": 2, "焉遲落": 1 } },
+      { label: "D", text: "冷靜算牌的人，先把局勢看透再表態", score: { "焉遲落": 3, "泰雅": 1 } }
     ]
   },
   {
-    kicker: "终点",
+    kicker: "終點",
     type: "single",
-    title: "故事最后，你最想亲手完成哪件事？",
+    title: "故事最後，你最想親手完成哪件事？",
     options: [
-      { label: "A", text: "让故土与部族拥有自己的兵营和未来", score: { "泰雅": 2, "阿美": 3 } },
-      { label: "B", text: "等同伴归来，把承诺埋进福尔摩沙的土地", score: { "罗宾": 3, "伊莎贝拉": 1 } },
-      { label: "C", text: "护住最后的道统与身边的亲人", score: { "郑森": 3, "焉迟落": 1 } },
-      { label: "D", text: "找回被时代夺走的人，证明自己从哪里来", score: { "田川七左卫门": 3, "焉迟落": 1 } },
-      { label: "E", text: "在战场前决定：我是公主、间谍，还是海盗", score: { "伊莎贝拉": 3 } }
+      { label: "A", text: "讓故土與部族擁有自己的兵營和未來", score: { "泰雅": 2, "阿美": 3 } },
+      { label: "B", text: "等同伴歸來，把承諾埋進福爾摩沙的土地", score: { "羅賓": 3, "伊莎貝拉": 1 } },
+      { label: "C", text: "護住最後的道統與身邊的親人", score: { "鄭森": 3, "焉遲落": 1 } },
+      { label: "D", text: "找回被時代奪走的人，證明自己從哪裡來", score: { "田川七左衛門": 3, "焉遲落": 1 } },
+      { label: "E", text: "在戰場前決定：我是公主、間諜，還是海盜", score: { "伊莎貝拉": 3 } }
     ]
   },
   {
-    kicker: "爽点",
+    kicker: "爽點",
     type: "multi",
-    title: "你最期待哪些爽点？",
+    title: "你最期待哪些爽點？",
     options: [
-      { label: "A", text: "军团战、攻城、火炮和援军", score: { "郑森": 2, "罗宾": 2, "泰雅": 1 } },
-      { label: "B", text: "密信、账本、图纸、秘密接头", score: { "焉迟落": 2, "伊莎贝拉": 1, "泰雅": 1 } },
-      { label: "C", text: "海盗浪漫、法雅节、纵横四海", score: { "伊莎贝拉": 2, "罗宾": 2 } },
-      { label: "D", text: "原住民线、部族自由、长鲸秘密", score: { "阿美": 2, "泰雅": 2 } },
-      { label: "E", text: "兄弟、旧爱、名义婚姻和情感撕扯", score: { "田川七左卫门": 2, "焉迟落": 2, "阿美": 1 } }
+      { label: "A", text: "軍團戰、攻城、火砲和援軍", score: { "鄭森": 2, "羅賓": 2, "泰雅": 1 } },
+      { label: "B", text: "密信、帳本、圖紙、秘密接頭", score: { "焉遲落": 2, "伊莎貝拉": 1, "泰雅": 1 } },
+      { label: "C", text: "海盜浪漫、法雅節、縱橫四海", score: { "伊莎貝拉": 2, "羅賓": 2 } },
+      { label: "D", text: "原住民線、部族自由、長鯨秘密", score: { "阿美": 2, "泰雅": 2 } },
+      { label: "E", text: "兄弟、舊愛、名義婚姻和情感撕扯", score: { "田川七左衛門": 2, "焉遲落": 2, "阿美": 1 } }
     ]
   },
   {
-    kicker: "劝退",
+    kicker: "勸退",
     type: "multi",
-    title: "哪些体验会明显消耗你？",
+    title: "哪些體驗會明顯消耗你？",
     options: [
-      { label: "A", text: "长时间军事统筹和高压带队", score: { "郑森": -2, "罗宾": -2 } },
-      { label: "B", text: "情感纠葛太重，必须反复面对亏欠", score: { "田川七左卫门": -2, "焉迟落": -2, "阿美": -1, "泰雅": -1 } },
-      { label: "C", text: "主动隐藏目的，甚至要骗过亲近的人", score: { "焉迟落": -3, "伊莎贝拉": -2 } },
-      { label: "D", text: "需要频繁主动社交、拉人协助", score: { "伊莎贝拉": -1, "罗宾": -1, "郑森": -1 } },
-      { label: "E", text: "大量等待、支援、克制自己不先出手", score: { "泰雅": -2, "焉迟落": -1 } }
+      { label: "A", text: "長時間軍事統籌和高壓帶隊", score: { "鄭森": -2, "羅賓": -2 } },
+      { label: "B", text: "情感糾葛太重，必須反覆面對虧欠", score: { "田川七左衛門": -2, "焉遲落": -2, "阿美": -1, "泰雅": -1 } },
+      { label: "C", text: "主動隱藏目的，甚至要騙過親近的人", score: { "焉遲落": -3, "伊莎貝拉": -2 } },
+      { label: "D", text: "需要頻繁主動社交、拉人協助", score: { "伊莎貝拉": -1, "羅賓": -1, "鄭森": -1 } },
+      { label: "E", text: "大量等待、支援、剋制自己不先出手", score: { "泰雅": -2, "焉遲落": -1 } }
     ]
   }
 ];
@@ -243,6 +243,15 @@ const storageKey = "hongyi-role-quiz-records";
 const pendingSubmissionKey = "hongyi-role-quiz-pending-submissions";
 const resultSheetId = "1gRP1AOeuNfii8__D2az9Uhqy6XdTgiCNgdSprH0q0_o";
 const resultEndpoint = "https://script.google.com/macros/s/AKfycbyi_aSiJUY8-6AlARIP4J5P3cFWjjrfhCm2FRr2YF4wekY60Gk7sAfMNroE5LVu496jWQ/exec";
+const legacyRoleNames = {
+  "鄭森": "郑森",
+  "田川七左衛門": "田川七左卫门",
+  "羅賓": "罗宾",
+  "泰雅": "泰雅",
+  "阿美": "阿美",
+  "伊莎貝拉": "伊莎贝拉",
+  "焉遲落": "焉迟落"
+};
 
 const state = {
   step: 0,
@@ -378,7 +387,7 @@ function renderQuestion() {
   currentStep.textContent = String(state.step + 1).padStart(2, "0");
   progressFill.style.width = `${((state.step + 1) / questions.length) * 100}%`;
   prevButton.disabled = state.step === 0;
-  nextButton.textContent = state.step === questions.length - 1 ? "看结果" : "下一题";
+  nextButton.textContent = state.step === questions.length - 1 ? "看結果" : "下一題";
 
   optionsEl.innerHTML = "";
 
@@ -537,7 +546,7 @@ function renderResult() {
   roleLine.textContent = role.line;
   roleDescription.textContent = role.description;
   resultMatch.textContent = `${winner.percent}% MATCH`;
-  resultOwner.textContent = state.playerName ? `${state.playerName}的结果` : "玩家结果";
+  resultOwner.textContent = state.playerName ? `${state.playerName}的結果` : "玩家結果";
   scoreScope.textContent = state.gender === "male" ? "男角色" : "女角色";
 
   roleTags.innerHTML = "";
@@ -581,7 +590,7 @@ function saveRecord(winnerRole, candidates) {
 
   const record = {
     id,
-    time: new Date().toLocaleString("zh-CN", { hour12: false }),
+    time: new Date().toLocaleString("zh-TW", { hour12: false }),
     name: state.playerName || "未命名玩家",
     gender: state.gender,
     winnerRole,
@@ -629,7 +638,7 @@ function resetQuiz() {
   state.answers = questions.map(() => []);
   state.savedResultId = null;
   state.submittedResultId = null;
-  setSubmitStatus("idle", "自动提交", "正在准备提交结果。");
+  setSubmitStatus("idle", "自動提交", "正在準備提交結果。");
   showScreen("intro");
 }
 
@@ -647,9 +656,9 @@ function copyWithFallback(text) {
 
 function flashShareButton() {
   const button = document.querySelector("#shareButton");
-  button.textContent = "已复制";
+  button.textContent = "已複製";
   setTimeout(() => {
-    button.textContent = "复制完整结果";
+    button.textContent = "複製完整結果";
   }, 1400);
 }
 
@@ -660,7 +669,7 @@ function buildShareText() {
     return `${name} ${percent}`;
   });
   const owner = state.playerName || "玩家";
-  return `《红夷海乱》角色心测｜${owner}\n主匹配：${roleName.textContent}（${resultMatch.textContent}）\n同性别匹配：${scores.join(" / ")}`;
+  return `《紅夷海亂》角色心測｜${owner}\n主匹配：${roleName.textContent}（${resultMatch.textContent}）\n同性別匹配：${scores.join(" / ")}`;
 }
 
 function renderRolePreviewStrip() {
@@ -682,6 +691,14 @@ function renderRolePreviewStrip() {
 }
 
 function buildSubmissionPayload(winner, candidates, rawScores, percents) {
+  const allPercents = Object.fromEntries(roleOrder.map((role) => [role, percents[role]]));
+  const allRawScores = Object.fromEntries(roleOrder.map((role) => [role, rawScores[role]]));
+
+  Object.entries(legacyRoleNames).forEach(([role, legacyRole]) => {
+    allPercents[legacyRole] = percents[role];
+    allRawScores[legacyRole] = rawScores[role];
+  });
+
   const selectedAnswers = questions.map((question, index) => {
     const selected = state.answers[index].map((optionIndex) => {
       const option = question.options[optionIndex];
@@ -700,15 +717,15 @@ function buildSubmissionPayload(winner, candidates, rawScores, percents) {
     id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
     sheetId: resultSheetId,
     submittedAt: new Date().toISOString(),
-    localTime: new Date().toLocaleString("zh-CN", { hour12: false }),
+    localTime: new Date().toLocaleString("zh-TW", { hour12: false }),
     playerName: state.playerName || "未命名玩家",
     gender: state.gender,
     genderLabel: state.gender === "male" ? "男角色" : "女角色",
     winnerRole: winner.role,
     matchPercent: winner.percent,
     visibleScores: candidates.map(({ role, percent, score }) => ({ role, percent, score })),
-    allPercents: Object.fromEntries(roleOrder.map((role) => [role, percents[role]])),
-    rawScores: Object.fromEntries(roleOrder.map((role) => [role, rawScores[role]])),
+    allPercents,
+    rawScores: allRawScores,
     answers: selectedAnswers,
     userAgent: navigator.userAgent,
     pageUrl: location.href
@@ -755,15 +772,15 @@ async function submitPayload(payload, { visible }) {
     if (visible) {
       setSubmitStatus(
         "warning",
-        "自动提交待配置",
-        "结果已保存在本机。部署 Google Apps Script 后，我会把它接到表格自动收集。"
+        "自動提交待設定",
+        "結果已儲存在本機。部署 Google Apps Script 後，我會把它接到表格自動收集。"
       );
     }
     return false;
   }
 
   if (visible) {
-    setSubmitStatus("submitting", "正在自动提交", "正在把结果发送到主持人的 Google 表格。");
+    setSubmitStatus("submitting", "正在自動提交", "正在把結果送到主持人的 Google 表格。");
   }
 
   try {
@@ -778,12 +795,12 @@ async function submitPayload(payload, { visible }) {
     const remaining = getPendingSubmissions().filter((item) => item.id !== payload.id);
     setPendingSubmissions(remaining);
     if (visible) {
-      setSubmitStatus("success", "已自动提交", "结果已发送到主持人的 Google 表格。");
+      setSubmitStatus("success", "已自動提交", "結果已送到主持人的 Google 表格。");
     }
     return true;
   } catch {
     if (visible) {
-      setSubmitStatus("error", "自动提交失败", "结果已保存在本机。网络恢复后会重试，也可以复制结果发给主持人。");
+      setSubmitStatus("error", "自動提交失敗", "結果已儲存在本機。網路恢復後會重試，也可以複製結果發給主持人。");
     }
     return false;
   }

@@ -1,24 +1,24 @@
-# 红夷海乱心测结果自动收集设置
+# 紅夷海亂心測結果自動收集設定
 
-当前已接入的 Web 应用 URL：
+目前已接入的 Web 應用 URL：
 
 https://script.google.com/macros/s/AKfycbyi_aSiJUY8-6AlARIP4J5P3cFWjjrfhCm2FRr2YF4wekY60Gk7sAfMNroE5LVu496jWQ/exec
 
-网站里的 `app.js` 已使用这个 URL 自动提交结果。以下步骤仅用于以后重新部署或更换表格时参考。
+網站裡的 `app.js` 已使用這個 URL 自動提交結果。以下步驟僅用於以後重新部署或更換表格時參考。
 
-1. 打开这张结果表：
+1. 打開這張結果表：
    https://docs.google.com/spreadsheets/d/1gRP1AOeuNfii8__D2az9Uhqy6XdTgiCNgdSprH0q0_o/edit
 
-2. 在表格里点 `扩展程序` -> `Apps Script`。
+2. 在表格裡點 `擴充功能` -> `Apps Script`。
 
-3. 删除默认代码，把 `Code.gs` 里的全部内容复制进去，保存。
+3. 刪除預設程式碼，把 `Code.gs` 裡的全部內容複製進去，儲存。
 
-4. 点右上角 `部署` -> `新建部署`。
+4. 點右上角 `部署` -> `新建部署`。
 
-5. 类型选择 `网页应用`，设置：
-   - 执行身份：`我`
-   - 谁可以访问：`任何人`
+5. 類型選擇 `網頁應用程式`，設定：
+   - 執行身份：`我`
+   - 誰可以存取：`任何人`
 
-6. 点 `部署`，按提示授权。完成后复制 `网页应用 URL`。
+6. 點 `部署`，按提示授權。完成後複製 `網頁應用程式 URL`。
 
-7. 把这个 URL 接进 `app.js` 的 `resultEndpoint`，重新发布 GitHub Pages。
+7. 把這個 URL 接進 `app.js` 的 `resultEndpoint`，重新發布 GitHub Pages。

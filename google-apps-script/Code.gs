@@ -1,24 +1,24 @@
 const SPREADSHEET_ID = "1gRP1AOeuNfii8__D2az9Uhqy6XdTgiCNgdSprH0q0_o";
-const SHEET_NAME = "自动提交结果";
+const SHEET_NAME = "自動提交結果";
 
 const HEADERS = [
-  "提交时间",
-  "本地时间",
+  "提交時間",
+  "本機時間",
   "玩家姓名",
-  "角色性别",
+  "角色性別",
   "主匹配角色",
   "MATCH",
-  "郑森",
-  "田川七左卫门",
-  "罗宾",
+  "鄭森",
+  "田川七左衛門",
+  "羅賓",
   "泰雅",
   "阿美",
-  "伊莎贝拉",
-  "焉迟落",
-  "页面URL",
-  "浏览器",
-  "答题明细JSON",
-  "完整数据JSON"
+  "伊莎貝拉",
+  "焉遲落",
+  "頁面URL",
+  "瀏覽器",
+  "答題明細JSON",
+  "完整資料JSON"
 ];
 
 function doGet() {
@@ -41,13 +41,13 @@ function doPost(e) {
       payload.genderLabel || payload.gender || "",
       payload.winnerRole || "",
       formatPercent_(payload.matchPercent),
-      formatPercent_(percents["郑森"]),
-      formatPercent_(percents["田川七左卫门"]),
-      formatPercent_(percents["罗宾"]),
+      formatPercent_(getPercent_(percents, "鄭森", "郑森")),
+      formatPercent_(getPercent_(percents, "田川七左衛門", "田川七左卫门")),
+      formatPercent_(getPercent_(percents, "羅賓", "罗宾")),
       formatPercent_(percents["泰雅"]),
       formatPercent_(percents["阿美"]),
-      formatPercent_(percents["伊莎贝拉"]),
-      formatPercent_(percents["焉迟落"]),
+      formatPercent_(getPercent_(percents, "伊莎貝拉", "伊莎贝拉")),
+      formatPercent_(getPercent_(percents, "焉遲落", "焉迟落")),
       payload.pageUrl || "",
       payload.userAgent || "",
       JSON.stringify(payload.answers || []),
@@ -84,4 +84,9 @@ function formatPercent_(value) {
     return "";
   }
   return `${value}%`;
+}
+
+function getPercent_(percents, role, legacyRole) {
+  if (percents[role] !== undefined) return percents[role];
+  return percents[legacyRole];
 }

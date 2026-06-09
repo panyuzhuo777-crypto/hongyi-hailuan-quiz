@@ -28,7 +28,7 @@ body {
   color: var(--ink);
   background: var(--deep);
   font-family:
-    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+    "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Hiragino Sans",
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   letter-spacing: 0;
   overflow-x: hidden;
@@ -49,11 +49,23 @@ button {
   inset: 0;
   z-index: -2;
   background-image:
-    linear-gradient(90deg, rgba(13, 10, 8, 0.9), rgba(20, 18, 12, 0.32) 48%, rgba(12, 12, 9, 0.74)),
-    linear-gradient(180deg, rgba(24, 11, 8, 0.18), rgba(14, 11, 8, 0.9)),
-    url("assets/background.jpg");
+    radial-gradient(circle at 18% 18%, rgba(242, 194, 95, 0.22), transparent 28%),
+    linear-gradient(90deg, rgba(9, 7, 5, 0.92), rgba(19, 14, 10, 0.3) 42%, rgba(9, 8, 7, 0.9)),
+    linear-gradient(180deg, rgba(24, 11, 8, 0.12), rgba(14, 11, 8, 0.94)),
+    url("assets/hongyi-hero.png");
   background-position: center;
   background-size: cover;
+}
+
+.scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, transparent 0 52%, rgba(242, 194, 95, 0.09) 52% 52.25%, transparent 52.25%),
+    linear-gradient(70deg, transparent 0 62%, rgba(81, 183, 165, 0.08) 62% 62.25%, transparent 62.25%);
+  opacity: 0.72;
 }
 
 .scene::after {
@@ -71,7 +83,7 @@ button {
 
 .app {
   position: relative;
-  width: min(1180px, calc(100% - 40px));
+  width: min(1240px, calc(100% - 40px));
   min-height: 100vh;
   margin: 0 auto;
   display: grid;
@@ -98,7 +110,7 @@ button {
   border: 1px solid rgba(255, 230, 179, 0.22);
   border-radius: 8px;
   color: var(--ink);
-  background: rgba(18, 14, 10, 0.74);
+  background: rgba(18, 14, 10, 0.8);
   box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
   cursor: pointer;
   backdrop-filter: blur(14px);
@@ -111,13 +123,13 @@ button {
 
 .intro-screen {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(380px, 460px);
-  gap: 36px;
-  align-items: end;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 448px);
+  gap: 34px;
+  align-items: center;
 }
 
 .intro-copy {
-  min-height: 560px;
+  min-height: 640px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -139,18 +151,134 @@ p {
 h1 {
   max-width: 760px;
   margin: 0;
-  font-size: 5.2rem;
+  font-size: 6.8rem;
   line-height: 1.04;
   font-weight: 900;
-  text-shadow: 0 16px 44px rgba(0, 0, 0, 0.48);
+  color: #fff7df;
+  text-shadow:
+    0 18px 54px rgba(0, 0, 0, 0.62),
+    0 0 34px rgba(242, 194, 95, 0.22);
 }
 
 .subtitle {
   max-width: 610px;
-  margin: 26px 0 0;
+  margin: 24px 0 0;
   color: var(--muted);
   font-size: 1.18rem;
   line-height: 1.78;
+}
+
+.intro-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.intro-flags span {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 230, 179, 0.18);
+  border-radius: 999px;
+  color: var(--ink);
+  background: rgba(10, 8, 6, 0.38);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+  font-size: 0.86rem;
+  font-weight: 900;
+  backdrop-filter: blur(10px);
+}
+
+.intro-intel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 560px;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.intro-intel div {
+  min-width: 0;
+  padding: 14px 15px;
+  border: 1px solid rgba(255, 230, 179, 0.14);
+  border-radius: 8px;
+  background: rgba(12, 10, 8, 0.42);
+  backdrop-filter: blur(12px);
+}
+
+.intro-intel strong,
+.intro-intel span {
+  display: block;
+}
+
+.intro-intel strong {
+  color: var(--gold);
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.intro-intel span {
+  margin-top: 7px;
+  color: var(--dim);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.cover-frame {
+  position: relative;
+  width: min(620px, 100%);
+  margin: 30px 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 230, 179, 0.16);
+  border-radius: 8px;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.46);
+  background: rgba(14, 11, 8, 0.62);
+}
+
+.cover-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1694 / 928;
+  object-fit: cover;
+}
+
+.cover-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(12, 9, 6, 0.1), transparent 45%),
+    linear-gradient(0deg, rgba(12, 9, 6, 0.78), transparent 42%);
+}
+
+.cover-frame figcaption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+  margin: 0;
+}
+
+.cover-frame span,
+.cover-frame strong {
+  display: block;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.62);
+}
+
+.cover-frame span {
+  color: var(--dim);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.cover-frame strong {
+  color: var(--ink);
+  text-align: right;
+  font-size: 0.95rem;
 }
 
 .quiz-surface {
@@ -159,8 +287,8 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(242, 194, 95, 0.1), transparent 34%),
-    linear-gradient(180deg, rgba(81, 183, 165, 0.08), transparent 64%),
+    linear-gradient(135deg, rgba(242, 194, 95, 0.13), transparent 34%),
+    linear-gradient(180deg, rgba(81, 183, 165, 0.1), transparent 64%),
     var(--glass);
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
@@ -168,6 +296,27 @@ h1 {
 
 .intro-surface {
   align-self: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-surface::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 86px;
+  height: 86px;
+  border: 1px solid rgba(242, 194, 95, 0.16);
+  border-radius: 50%;
+  background:
+    linear-gradient(90deg, transparent calc(50% - 1px), rgba(242, 194, 95, 0.12) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+    linear-gradient(0deg, transparent calc(50% - 1px), rgba(242, 194, 95, 0.12) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px));
+  opacity: 0.82;
+}
+
+.intro-surface > * {
+  position: relative;
 }
 
 .surface-head,
@@ -705,7 +854,7 @@ input:focus {
   }
 
   h1 {
-    font-size: 3.6rem;
+    font-size: 4.4rem;
   }
 
   .subtitle {
@@ -732,11 +881,25 @@ input:focus {
   }
 
   h1 {
-    font-size: 2.72rem;
+    font-size: 3.08rem;
   }
 
   .intro-copy {
-    min-height: 260px;
+    min-height: auto;
+  }
+
+  .intro-intel {
+    grid-template-columns: 1fr;
+  }
+
+  .cover-frame figcaption {
+    align-items: start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cover-frame strong {
+    text-align: left;
   }
 
   .quiz-surface {

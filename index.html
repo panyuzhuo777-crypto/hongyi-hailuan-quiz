@@ -1,30 +1,60 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>红夷海乱｜角色心测</title>
-    <link rel="stylesheet" href="styles.css?v=20260609-submit" />
+    <title>紅夷海亂｜角色心測</title>
+    <link rel="stylesheet" href="styles.css?v=20260609-hero-tw" />
   </head>
   <body>
     <div class="scene" aria-hidden="true"></div>
     <audio id="bgm" src="assets/audio/bgm.mp3" loop preload="metadata"></audio>
 
     <main class="app" id="app">
-      <button class="audio-toggle" id="audioToggle" type="button" aria-label="播放或暂停背景音乐">
+      <button class="audio-toggle" id="audioToggle" type="button" aria-label="播放或暫停背景音樂">
         BGM
       </button>
 
       <section class="screen intro-screen" id="introScreen">
         <div class="intro-copy">
           <p class="series-mark">ILHA FORMOSA · 1647</p>
-          <h1>红夷海乱</h1>
-          <p class="subtitle">海雾升起时，你会把旗帜、故土、旧爱和自由放在哪一边。</p>
+          <h1>紅夷海亂</h1>
+          <p class="subtitle">海霧升起時，你會把旗幟、故土、舊愛和自由放在哪一邊。</p>
+
+          <div class="intro-flags" aria-label="劇情關鍵詞">
+            <span>海戰</span>
+            <span>陣營</span>
+            <span>故土</span>
+            <span>舊愛</span>
+          </div>
+
+          <div class="intro-intel" aria-label="心測摘要">
+            <div>
+              <strong>07</strong>
+              <span>可匹配角色</span>
+            </div>
+            <div>
+              <strong>14</strong>
+              <span>命運選題</span>
+            </div>
+            <div>
+              <strong>±%</strong>
+              <span>相性分差</span>
+            </div>
+          </div>
+
+          <figure class="cover-frame">
+            <img src="assets/hongyi-hero.png" alt="紅夷海亂海戰主視覺" />
+            <figcaption>
+              <span>FORMOSA STRAIT</span>
+              <strong>砲煙正在靠岸</strong>
+            </figcaption>
+          </figure>
         </div>
 
         <div class="quiz-surface intro-surface">
           <div class="surface-head">
-            <span>角色心测</span>
+            <span>角色心測</span>
             <span>SEA · WAR · CHOICE</span>
           </div>
 
@@ -34,8 +64,8 @@
           </label>
 
           <div class="field">
-            <div class="field-label">角色性别</div>
-            <div class="segmented" role="radiogroup" aria-label="角色性别">
+            <div class="field-label">角色性別</div>
+            <div class="segmented" role="radiogroup" aria-label="角色性別">
               <button class="segment is-active" type="button" data-gender="male">男角色</button>
               <button class="segment" type="button" data-gender="female">女角色</button>
             </div>
@@ -44,12 +74,12 @@
           <div class="role-preview-strip" id="rolePreviewStrip" aria-label="可匹配角色"></div>
 
           <button class="primary-action" id="startButton" type="button">
-            开始心测
+            開始心測
           </button>
 
-          <section class="records is-hidden" id="recordsPanel" aria-label="本机结果记录">
+          <section class="records is-hidden" id="recordsPanel" aria-label="本機結果記錄">
             <div class="records-head">
-              <span>本机结果记录</span>
+              <span>本機結果記錄</span>
               <button class="text-action" id="clearRecordsButton" type="button">清空</button>
             </div>
             <div class="records-list" id="recordsList"></div>
@@ -62,9 +92,9 @@
           <div class="quiz-topline">
             <div>
               <p class="eyebrow compact" id="questionKicker">海路</p>
-              <div class="step-count"><span id="currentStep">01</span> / <span id="totalSteps">13</span></div>
+              <div class="step-count"><span id="currentStep">01</span> / <span id="totalSteps">14</span></div>
             </div>
-            <button class="ghost-action" id="restartButton" type="button">重来</button>
+            <button class="ghost-action" id="restartButton" type="button">重來</button>
           </div>
 
           <div class="progress-track" aria-hidden="true">
@@ -75,8 +105,8 @@
           <div class="options" id="options"></div>
 
           <div class="quiz-actions">
-            <button class="secondary-action" id="prevButton" type="button">上一题</button>
-            <button class="primary-action" id="nextButton" type="button">下一题</button>
+            <button class="secondary-action" id="prevButton" type="button">上一題</button>
+            <button class="primary-action" id="nextButton" type="button">下一題</button>
           </div>
         </div>
       </section>
@@ -84,7 +114,7 @@
       <section class="screen result-screen is-hidden" id="resultScreen" aria-live="polite">
         <div class="quiz-surface result-surface">
           <div class="surface-head">
-            <span id="resultOwner">玩家结果</span>
+            <span id="resultOwner">玩家結果</span>
             <span id="resultMatch">MATCH</span>
           </div>
 
@@ -103,9 +133,9 @@
             </div>
           </div>
 
-          <section class="scoreboard" aria-label="同性别角色匹配">
+          <section class="scoreboard" aria-label="同性別角色匹配">
             <div class="scoreboard-head">
-              <span>同性别角色匹配</span>
+              <span>同性別角色匹配</span>
               <span id="scoreScope">男角色</span>
             </div>
             <div id="scoreRows"></div>
@@ -114,19 +144,19 @@
           <section class="submit-status" id="submitStatus" aria-live="polite">
             <span class="submit-dot" aria-hidden="true"></span>
             <div>
-              <strong id="submitStatusTitle">自动提交</strong>
-              <p id="submitStatusText">正在准备提交结果。</p>
+              <strong id="submitStatusTitle">自動提交</strong>
+              <p id="submitStatusText">正在準備提交結果。</p>
             </div>
           </section>
 
           <div class="quiz-actions result-actions">
-            <button class="secondary-action" id="againButton" type="button">再测一次</button>
-            <button class="primary-action" id="shareButton" type="button">复制完整结果</button>
+            <button class="secondary-action" id="againButton" type="button">再測一次</button>
+            <button class="primary-action" id="shareButton" type="button">複製完整結果</button>
           </div>
         </div>
       </section>
     </main>
 
-    <script src="app.js?v=20260609-submit"></script>
+    <script src="app.js?v=20260609-hero-tw"></script>
   </body>
 </html>
