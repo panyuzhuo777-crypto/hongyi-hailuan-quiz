@@ -594,6 +594,56 @@ input:focus {
   background: linear-gradient(90deg, #7c2b2b, #ff8e7f);
 }
 
+.submit-status {
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  margin-top: 22px;
+  padding: 14px;
+  border: 1px solid rgba(255, 230, 179, 0.14);
+  border-radius: 8px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.submit-dot {
+  width: 10px;
+  height: 10px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--dim);
+}
+
+.submit-status strong {
+  display: block;
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+.submit-status p {
+  margin: 5px 0 0;
+  color: var(--dim);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.submit-status.is-submitting .submit-dot {
+  background: var(--gold);
+}
+
+.submit-status.is-success .submit-dot {
+  background: var(--teal);
+}
+
+.submit-status.is-warning .submit-dot {
+  background: var(--gold);
+}
+
+.submit-status.is-error .submit-dot {
+  background: #ff8e7f;
+}
+
 .records {
   margin-top: 24px;
   padding-top: 18px;

@@ -240,13 +240,17 @@ const questions = [
 
 const rankPoints = [3, 2, 1];
 const storageKey = "hongyi-role-quiz-records";
+const pendingSubmissionKey = "hongyi-role-quiz-pending-submissions";
+const resultSheetId = "1gRP1AOeuNfii8__D2az9Uhqy6XdTgiCNgdSprH0q0_o";
+const resultEndpoint = "https://script.google.com/macros/s/AKfycbyi_aSiJUY8-6AlARIP4J5P3cFWjjrfhCm2FRr2YF4wekY60Gk7sAfMNroE5LVu496jWQ/exec";
 
 const state = {
   step: 0,
   gender: "male",
   playerName: "",
   answers: questions.map(() => []),
-  savedResultId: null
+  savedResultId: null,
+  submittedResultId: null
 };
 
 const introScreen = document.querySelector("#introScreen");
@@ -274,10 +278,14 @@ const scoreScope = document.querySelector("#scoreScope");
 const playerNameInput = document.querySelector("#playerName");
 const bgm = document.querySelector("#bgm");
 const audioToggle = document.querySelector("#audioToggle");
+const submitStatus = document.querySelector("#submitStatus");
+const submitStatusTitle = document.querySelector("#submitStatusTitle");
+const submitStatusText = document.querySelector("#submitStatusText");
 
 totalSteps.textContent = String(questions.length).padStart(2, "0");
 renderRolePreviewStrip();
 renderRecords();
+retryPendingSubmissions();
 
 document.querySelectorAll(".segment").forEach((button) => {
   button.addEventListener("click", () => {
@@ -541,6 +549,7 @@ function renderResult() {
 
   renderScoreRows(candidates);
   saveRecord(winner.role, candidates);
+  queueAndSubmitResult(buildSubmissionPayload(winner, candidates, scores, percents));
   showScreen("result");
 }
 
@@ -619,6 +628,8 @@ function resetQuiz() {
   state.step = 0;
   state.answers = questions.map(() => []);
   state.savedResultId = null;
+  state.submittedResultId = null;
+  setSubmitStatus("idle", "自动提交", "正在准备提交结果。");
   showScreen("intro");
 }
 
@@ -668,4 +679,119 @@ function renderRolePreviewStrip() {
     `;
     strip.appendChild(item);
   });
+}
+
+function buildSubmissionPayload(winner, candidates, rawScores, percents) {
+  const selectedAnswers = questions.map((question, index) => {
+    const selected = state.answers[index].map((optionIndex) => {
+      const option = question.options[optionIndex];
+      return `${option.label}. ${option.text}`;
+    });
+
+    return {
+      number: index + 1,
+      type: question.type,
+      title: question.title,
+      selected
+    };
+  });
+
+  return {
+    id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+    sheetId: resultSheetId,
+    submittedAt: new Date().toISOString(),
+    localTime: new Date().toLocaleString("zh-CN", { hour12: false }),
+    playerName: state.playerName || "未命名玩家",
+    gender: state.gender,
+    genderLabel: state.gender === "male" ? "男角色" : "女角色",
+    winnerRole: winner.role,
+    matchPercent: winner.percent,
+    visibleScores: candidates.map(({ role, percent, score }) => ({ role, percent, score })),
+    allPercents: Object.fromEntries(roleOrder.map((role) => [role, percents[role]])),
+    rawScores: Object.fromEntries(roleOrder.map((role) => [role, rawScores[role]])),
+    answers: selectedAnswers,
+    userAgent: navigator.userAgent,
+    pageUrl: location.href
+  };
+}
+
+function getPendingSubmissions() {
+  try {
+    return JSON.parse(localStorage.getItem(pendingSubmissionKey) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function setPendingSubmissions(items) {
+  localStorage.setItem(pendingSubmissionKey, JSON.stringify(items.slice(-20)));
+}
+
+function queueAndSubmitResult(payload) {
+  if (state.submittedResultId === payload.id) return;
+  state.submittedResultId = payload.id;
+
+  const pending = getPendingSubmissions();
+  pending.push(payload);
+  setPendingSubmissions(pending);
+  submitPayload(payload, { visible: true });
+}
+
+async function retryPendingSubmissions() {
+  if (!resultEndpoint) return;
+  const pending = getPendingSubmissions();
+  if (pending.length === 0) return;
+
+  const remaining = [];
+  for (const payload of pending) {
+    const ok = await submitPayload(payload, { visible: false });
+    if (!ok) remaining.push(payload);
+  }
+  setPendingSubmissions(remaining);
+}
+
+async function submitPayload(payload, { visible }) {
+  if (!resultEndpoint) {
+    if (visible) {
+      setSubmitStatus(
+        "warning",
+        "自动提交待配置",
+        "结果已保存在本机。部署 Google Apps Script 后，我会把它接到表格自动收集。"
+      );
+    }
+    return false;
+  }
+
+  if (visible) {
+    setSubmitStatus("submitting", "正在自动提交", "正在把结果发送到主持人的 Google 表格。");
+  }
+
+  try {
+    const body = new URLSearchParams();
+    body.set("payload", JSON.stringify(payload));
+    await fetch(resultEndpoint, {
+      method: "POST",
+      mode: "no-cors",
+      body
+    });
+
+    const remaining = getPendingSubmissions().filter((item) => item.id !== payload.id);
+    setPendingSubmissions(remaining);
+    if (visible) {
+      setSubmitStatus("success", "已自动提交", "结果已发送到主持人的 Google 表格。");
+    }
+    return true;
+  } catch {
+    if (visible) {
+      setSubmitStatus("error", "自动提交失败", "结果已保存在本机。网络恢复后会重试，也可以复制结果发给主持人。");
+    }
+    return false;
+  }
+}
+
+function setSubmitStatus(kind, title, text) {
+  if (!submitStatus) return;
+  submitStatus.className = `submit-status is-${kind}`;
+  submitStatusTitle.textContent = title;
+  submitStatusText.textContent = text;
 }
